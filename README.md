@@ -1,193 +1,91 @@
-Visualisation Redesign: From Cluttered Pie Chart to Clear Bar Chart
-
-📌 Executive Summary
-
-This project demonstrates how applying core visual design principles can transform an ineffective, cluttered business visualization into a clear, actionable dashboard visual.
-
-Using Microsoft Power BI Desktop, a 17-slice pie chart displaying sales revenue across product subcategories was redesigned into a descending-sorted horizontal bar chart. The redesign reduced time-to-insight from ~20 seconds to under 3 seconds and uncovered a key 80/20 revenue concentration pattern (Pareto principle) that was previously obscured.
-
-🛠️ Tools & Dataset
-
-BI Tool: Microsoft Power BI Desktop
-
-Dataset: Sample Superstore Dataset (Kaggle)
-
-Key Fields Analyzed: Sub-Category (Categorical) and Sales (Continuous)
-
-🔍 The Problem (Before: 17-Slice Pie Chart)
-
-The original visualization mapped total sales revenue across 17 distinct subcategories using a standard pie chart.
-
-Identified Design Flaws:
-
-Format-Data Mismatch: Pie charts are ineffective when comparing more than 2–5 categories. Evaluating 17 slices forces the viewer to judge subtle differences in slice areas and angles—tasks the human visual system performs poorly.
-
-Visual Noise: 17 distinct color fills created distracting clutter without encoding any meaningful data.
-
-Absence of Ranking: The categories appeared in arbitrary order, requiring manual back-and-forth comparison across slices to rank performance.
-
-Label Overlap: Small slices (e.g., Fasteners at $3K) caused leader lines and percentage text to overlap, rendering low-volume categories unreadable.
-
-✨ The Solution (After: Sorted Horizontal Bar Chart)
-
-The visualization was rebuilt as a Horizontal Clustered Bar Chart applying perceptual accuracy and Gestalt principles:
-
-Key Design Enhancements:
-
-Perceptual Accuracy: Encoded sales values using bar length along an aligned common scale, enabling instant visual comparison.
-
-Descending Sort: Sorted subcategories from highest to lowest sales, making ranking immediately visible without reading numerical labels.
-
-Single Accent Color: Replaced the multi-color palette with a uniform blue fill to eliminate visual distraction.
-
-Direct Data Labeling: Added exact values directly to the end of each bar formatted in thousands (K) for immediate readability.
-
-📊 Feature Comparison Table
-
-Design Aspect
-
-Before (Pie Chart)
-
-After (Horizontal Bar Chart)
-
-Visual Encoding
-
-Angles & Slice Areas
-
-Position along Aligned Scale (Bar Length)
-
-Category Sorting
-
-Unsorted / Arbitrary Order
-
-Sorted Descending by Sales Volume
-
-Color Usage
-
-17 Colors (Visual Noise)
-
-Single Uniform Accent Blue
-
-Data Labels
-
-Overlapping Leader Lines
-
-Direct End-of-Bar Labels (Formatted in $K)
-
-Time-to-Insight
-
-~15–20 Seconds
-
-~2–3 Seconds
-
-Self-Sufficiency
-
-Low (Requires calculation)
-
-High (Self-explanatory)
-
-💡 Key Business Insights (Pareto 80/20 Analysis)
-
-Beyond improving visual readability, the redesigned chart immediately highlighted a critical revenue pattern:
-
-Sub-Category
-
-Revenue ($K)
-
-% of Total Sales
-
-Cumulative %
-
-Phones
-
-$330K
-
-14.4%
-
-14.4%
-
-Chairs
-
-$328K
-
-14.3%
-
-28.7%
-
-Storage
-
-$224K
-
-9.8%
-
-38.5%
-
-Tables
-
-$207K
-
-9.0%
-
-47.5%
-
-Binders
-
-$203K
-
-8.8%
-
-56.3%
-
-Machines
-
-$189K
-
-8.2%
-
-64.5%
-
-Accessories
-
-$167K
-
-7.3%
-
-71.8%
-
-Copiers
-
-$150K
-
-6.5%
-
-78.3%
-
-Remaining 9 Categories
-
-$495K
-
-21.7%
-
-100.0%
-
-Strategic Takeaway:
-
-The 80/20 Rule: The top 8 out of 17 subcategories generate ~78.3% of total revenue.
-
-Actionable Recommendation: Supply chain and marketing resources should focus primarily on maintaining inventory and promotion for these top 8 drivers. Low-volume subcategories (e.g., Fasteners at $3K) can be bundled or streamlined to optimize warehouse space.
-
-📁 Repository Structure
-
-├── Sample_Superstore.csv        # Source dataset file
-├── Visualization_Redesign.pbix  # Power BI report file
-├── screenshot.png               # Before vs. After dashboard preview
-└── README.md                    # Project documentation
-
-
-🚀 How to Run This Project
-
-Clone or download this repository.
-
-Open Visualization_Redesign.pbix using Microsoft Power BI Desktop.
-
-(Optional) Re-link Sample_Superstore.csv if prompted during dataset refresh.
+# Visualization Redesign: From a Cluttered Pie Chart to a Clear Bar Chart
+
+A Power BI project that redesigns a 17-slice pie chart of sales by product sub-category into a sorted horizontal bar chart. The clearer chart shows that **8 of 17 sub-categories generate 78.3% of total sales**.
+
+## Before and after
+
+**Before: cluttered pie chart (17 slices)**
+
+![Before: cluttered pie chart](Before%20Chart%20%28Cluttered%20Pie%20Chart%29.png)
+
+**After: sorted horizontal bar chart**
+
+![After: sorted horizontal bar chart](After%20Chart%20%28Sorted%2C%20Clean%20Horizontal%20Bar%20Chart%29.png)
+
+## Project context
+Built as part of my MBA (Business Analytics) capstone, using the "Visualization Redesign" problem from the Coursera course *Data Visualization Capstone* (Johns Hopkins University).
+
+- **Tool:** Microsoft Power BI Desktop
+- **Dataset:** Sample Superstore (Kaggle), 9,994 rows and 13 columns
+- **Fields used:** Sub-Category (17 categories) and Sales
+
+## The problem (before)
+- **Too many slices:** pies are reliable for roughly 2 to 5 categories, and 17 slices are hard to compare by angle and area.
+- **Visual noise:** 17 colors that carry no extra meaning.
+- **No ranking:** categories appear in arbitrary order.
+- **Unreadable labels:** small slices such as Fasteners ($3K) have overlapping leader lines.
+
+## The solution (after)
+- **Bar length on a common scale:** the easiest way to compare many categories accurately.
+- **Descending sort:** the ranking is visible without reading any numbers.
+- **One accent color:** removes the legend and the clutter.
+- **Direct labels:** exact values at the end of each bar, formatted in thousands (K).
+
+## Design comparison
+
+| Aspect | Before (pie chart) | After (bar chart) |
+|---|---|---|
+| Visual encoding | Angles and slice areas | Bar length on an aligned scale |
+| Sorting | Arbitrary order | Descending by sales |
+| Colors | 17 colors with no meaning | One accent blue |
+| Labels | Overlapping leader lines | Direct end-of-bar labels |
+| Time to rank the top 3 (estimated*) | ~15-20 seconds | ~2-3 seconds |
+
+*Informal self-timed test, not a controlled usability study.
+
+## Key insight: the 80/20 pattern
+Total sales are about $2.30M. The top 8 of 17 sub-categories contribute about $1.80M (78.3%). The bottom 5 (Supplies, Art, Envelopes, Labels, Fasteners) contribute only 4.6%.
+
+| Sub-Category | Sales ($K) | % of total | Cumulative % |
+|---|---|---|---|
+| Phones | 330 | 14.4% | 14.4% |
+| Chairs | 328 | 14.3% | 28.7% |
+| Storage | 224 | 9.7% | 38.4% |
+| Tables | 207 | 9.0% | 47.4% |
+| Binders | 203 | 8.9% | 56.3% |
+| Machines | 189 | 8.2% | 64.5% |
+| Accessories | 167 | 7.3% | 71.8% |
+| Copiers | 150 | 6.5% | 78.3% |
+| Other 9 sub-categories | 498 | 21.7% | 100.0% |
+
+**Takeaway:** inventory and promotion effort can focus on the top sales drivers, and the lowest-selling sub-categories can be bundled or carried in smaller quantities.
+
+**Caveat:** this view uses sales only. In this dataset, Tables (4th by sales) has a negative total profit (about -$17.7K), as do Bookcases and Supplies. Profit should be checked before deciding where to focus.
+
+## What I did
+1. Imported the Superstore CSV into Power BI and checked the data types.
+2. Built the original pie chart (Sub-Category as legend, Sum of Sales as values).
+3. Documented its design problems.
+4. Rebuilt it as a horizontal bar chart, sorted descending.
+5. Applied a single color and direct data labels.
+6. Compared both charts and calculated the cumulative (Pareto) contribution.
+
+## Limitations
+- The reading-time comparison was a self-test, not a study with other people.
+- Only one category field (Sub-Category) was compared against one measure (Sales).
+- Results reflect Power BI's default chart rendering.
+
+## Repository contents
+- `Visualization_Redesign_Capstone.pbix`: the Power BI report
+- `SampleSuperstore.csv`: source dataset
+- `Before Chart (Cluttered Pie Chart).png` and `After Chart (Sorted, Clean Horizontal Bar Chart).png`: chart screenshots
+
+## How to open
+Download the repository, open `Visualization_Redesign_Capstone.pbix` in Power BI Desktop, and re-link `SampleSuperstore.csv` if Power BI asks for the data source.
+
+## Future work
+- Add profit and compare it with sales for each sub-category
+- Break the analysis down by region and segment
+- Build an interactive drill-down dashboard
+- Test the two charts with a small group of people
+- Check the color scheme for color-blind readers
